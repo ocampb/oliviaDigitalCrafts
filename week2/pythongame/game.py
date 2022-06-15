@@ -137,4 +137,62 @@ if move3 == "2":
     Hole.dig(Hole1, 2)
     Hole.measureHole(Hole1)
     Dog.updateEnergy(Winnie, -3)
+if move3 == "3":
+    print ("You and Moose start barking at each other through the fence and it's SO FUN you get the zoomies. Lose 1 energy. ")
+    Dog.updateEnergy(Winnie, -1)
+if move3 == "4": 
+    print ("You begin your hunt near the hammock and immediately find something! You gobble it down quickly, but you suddenly feel sick which costs you energy.")
+    Dog.updateEnergy(Winnie, -3)
+
+move4 = ""
+def lunch ():
+    print("It's time for lunch and you sure are hungry! You immediately eat all of the food in your food bowl.")
+    move4 = input( 
+    "\n"
+    "What are you going to do now?"
+    "\n"
+    "\n"
+    "1 Stand by the container of treats and beg.""\n"
+    "2 Stand by the backdoor to go back outside."
+      "\n")
+    return move4
+
+move4 = lunch()
+if move4 == "1": 
+    print("Success! You got a treat which increased your energy levels.")
+    #insert function to increase energy levels
+if move4 == "2":
+    print ("Success! You're in the backyard, ready to dig your hole.")
+
+move5 = ""
+def backyard2 (): 
+    move5 = input ("Your human lets you back outside for your afternoon play session. It starts raining which softens the dirt near the fence - great conditions to complete your hole!" "\n"
+    "What would you like to do?" "\n"
+    "1 Dig as much as you can." "\n"
+    "2 Hunt for treats in the backyard.""\n"
+    "3 Take a nap under the hammock.""\n"
+    )
+    return move5
+
+move5 = backyard2()
+
+if move5 == "1": measureHoleInitial()
+if move5 == "2": 
+    Hole.dig(Hole1, 2)
+    Hole.measureHole(Hole1)
+    Dog.updateEnergy(Winnie, -3)
+if move5 == "3":
+    print ("You and Moose start barking at each other through the fence and it's SO FUN you get the zoomies. Lose 1 energy. ")
+    Dog.updateEnergy(Winnie, -1)
+
+if Hole1.depth > 12: 
+    print ("You win!")
+
+if Hole1.depth == 12: 
+    print ("You win!")
+
+if Hole1.depth < 12:
+    print("The sun is starting to set and your human comes outside to play." 
+    "Your day is over and you're out of time to dig your hole. Your human quickly notices the hole and grabs a wheelbarrow full of dirt to fill in your progress." 
+    "While you failed today, there's always tomorrow to try again!")
 
