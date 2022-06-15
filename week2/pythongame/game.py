@@ -162,7 +162,7 @@ if move4 == "1":
     print("Success! You got a treat which increased your energy levels.")
     #insert function to increase energy levels
 if move4 == "2":
-    print ("Success! You're in the backyard, ready to dig your hole.")
+    print ("You missed out on a tasty treat. You're now in the backyard, ready to dig your hole.")
 
 move5 = ""
 def backyard2 (): 
@@ -176,13 +176,14 @@ def backyard2 ():
 
 move5 = backyard2()
 
-if move5 == "1": measureHoleInitial()
-if move5 == "2": 
+if move5 == "1": 
     Hole.dig(Hole1, 2)
     Hole.measureHole(Hole1)
     Dog.updateEnergy(Winnie, -3)
+if move5 == "2": 
+    print ("hunt for treats")
 if move5 == "3":
-    print ("You and Moose start barking at each other through the fence and it's SO FUN you get the zoomies. Lose 1 energy. ")
+    print ("Nap ")
     Dog.updateEnergy(Winnie, -1)
 
 if Hole1.depth > 12: 
