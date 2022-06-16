@@ -34,11 +34,13 @@ Hole1 = Hole(0)
 def objective():
     print("Winnie's Objective:"
     "\n"
+    "\n"
     "Winnie is a high energy puppy and she LOVES playing with her friend Moose who lives next door."
     "\n"
     "Winnie and Moose play together at night when their parents are done working, but Winnie wants to play with Moose in the mornings too!"
-    "\n"
-    "Help Winnie dig a hole in the fence so that she can visit Moose whenever she wants."
+    "\n")
+    print(dog_ascii_4)
+    print( "Help Winnie dig a hole in the fence so that she can visit Moose whenever she wants."
     "\n"
     "To accomplish this task, you'll need to spend a lot of time digging which requires a lot of energy." 
     "\n"
@@ -47,6 +49,7 @@ def objective():
     "The future of Winnie's play dates with Moose depend on your success. Good luck.  "
     )
 
+
 def measureHoleInitial():
     print("Using your paw, you estimate that the hole will need to be 12 paws deep in order for you to fit through and enter Moose's backyard.""\n"
     "Measuring that hole took a lot of mental energy, you lose 1 energy point.")
@@ -54,6 +57,7 @@ def measureHoleInitial():
     Dog.listEnergy(Winnie)
     #created as separate function to not mix class functions between Hole and Dog. 
 
+# ASCII IMAGES:
 
 dog_ascii_1 = """
            __
@@ -72,6 +76,50 @@ dog_ascii_2= """
 """
 # print(dog_ascii_2)
 
+dog_ascii_3= """
+
+         __
+        /  \\
+       / ..|\\
+      (_\  |_)
+      /  \@'
+     /     \\
+ _  /  `   |
+\\/  \  | _\\
+ \   /_ || \\_
+  \____)|_) \_)
+
+"""
+# print(dog_ascii_3)
+
+dog_ascii_4= """
+
+    ___
+ __/_  `.  .-\"\"\"-.
+ \_,` | \-'  /   )`-')
+  "") `"`    \  ((`"`
+ ___Y  ,    .'7 /|
+(_,___/...-` (_/_/ 
+"""
+
+# print(dog_ascii_4)
+
+dog_ascii_5= """
+
+          "",_o
+!       ( (  _)
+`\ ,,,,_'),)=~
+ (          )
+  ,   ,,,,  ,
+  ) ,)   < (
+ < <      ",\\
+  ",)      "_)
+
+"""
+# print(dog_ascii_5)
+
+
+
 ## game play begins
 
 def mainMenu ():
@@ -86,6 +134,9 @@ def mainMenu ():
         "4 Quit""\n"
         "\n")
     return playgame
+
+os.system("clear")
+os.system("say \"let's play untitled dog game\"")
 
 playgame = mainMenu()
 
@@ -105,22 +156,26 @@ if playgame == "3":
 if playgame == "4": 
     os._exit(0)
 
+os.system("clear")
+print(
+        "Welcome!" "\n"
+        "You'll be playing as Winnie today.""\n"
+        )
+
+
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-"\n"
-"\n"
-"\n"
-"\n"
 "\n"
 "\n")
 
+print(dog_ascii_3)
 
 ############## MOVE 1 ###################
 
 move1 = ""
 def startGame():
-    sleep(2)
+    sleep(1)
     print ("\n"
-    "To get started, let's learn about Winnie!""\n"
+    "Let's learn about Winnie!""\n"
      "\n")
     move1 = input( "Select an option below:""\n"
     "1 View Winnie's Character Profile""\n"
@@ -144,48 +199,26 @@ while move1 != "5":
         Dog.listEnergy(Winnie)
         sleep(2)
     if move1 == "4":
+        os.system("clear")
         objective()
-        sleep(2)
+        sleep(4)
     # list1 = ["1" "2", "3", "4", "5"]
     # for number in list1: 
     #     if move1 != number:
     #         print ("Please enter your answer as a numeric value, either 1, 2, 3, 4 or 5")
     
     move1 = startGame()
+    os.system("clear")
 
     # fix this ^ by using an array with answers and using index to indicate answer
 
 
-# move100 = ""
-# def startGame():
-#     move100 = input( 
-#     "\n"
-#     "To get started, let's learn about Winnie's Stats.'""\n""\n"
-#      "\n"
-#      "1 View Winnie's Stats""\n""\n"
-#      "2 View Winnie's Goal for Today"
-#       "\n")
-#     return move100
-
-
-# move1 = startGame()
-# if move1 == "1":
-#     print("Winnie Stats:" "\n")
-#     Dog.listStats(Winnie)
-# if move1 == "2":
-#     objective()
-
 ############# MOVE 2 ##################
 
-
-
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
 "\n")
+
+print(dog_ascii_1)
 
 move2 = ""
 def breakfast (): 
@@ -200,7 +233,8 @@ def breakfast ():
 move2 = breakfast()
 if move2 == "1":
     Dog.updateEnergy(Winnie, 2)
-    print("Yummy breakfast, your energy increased by 3 points!")
+    print(
+       "\n""\n""Yummy breakfast, your energy increased by 3 points!")
     Dog.listEnergy(Winnie)
 if move2 == "2":
     print("Uh oh. Your human reacted to your stubbornness by rolling their eyes and putting your bowl on the kitchen table.")
@@ -209,9 +243,9 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n"
 "\n"
 "\n"
-"\n"
-"\n"
 "\n")
+
+print(dog_ascii_5)
 
 move3 = ""
 def backyard (): 

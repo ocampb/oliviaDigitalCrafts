@@ -28,6 +28,6 @@ Goal:
 Energy Level: 1-10 depending on amount of tasks you do and how much food you eat
 
 Math for digging hole:
-16 paws to reach neighbors backyard.
+12 paws to reach neighbors backyard.
 1 dig = 2 paws depth
-1 dig =
+1 dig = 3 energy
