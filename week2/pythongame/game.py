@@ -1,24 +1,25 @@
 from time import sleep
-
-# import dog.png
+import os 
 
 
 class Dog:
-    def __init__(self, name, energy, attention):
+    def __init__(self, name, energy, attention, profile):
         self.name = name
         self.energy = energy
         self.attention = attention
+        self.profile = profile
     def updateEnergy(self, updateAmount):
         self.energy = self.energy + updateAmount
-        print("Energy is now:" + str(self.energy))
     def listAttentionSpan(self):
         print ("Attention Span = " + str(self.attention))
     def listEnergy(self):
         print("Energy = " + str(self.energy))
+    def listProfile(self):
+        print (self.profile)
 
-Winnie = Dog("Winnie", 10, 3)
-Buddee = Dog("Buddee", 5, 7)
-Rusty = Dog("Rusty", 3, 10)
+Winnie = Dog("Winnie", 10, 3, "Winnie is an energetic puppy who loves chewing on bones, digging holes and playing with friends. Winnie has never met a stranger - she's friendly to all new dogs and humans. Her birthday is on August 8th and she'll be one year old! She has a high energy level but a low attention span for completing tasks. ")
+Buddee = Dog("Buddee", 5, 7, "")
+Rusty = Dog("Rusty", 3, 10, "")
 
 class Hole:
     def __init__(self, depth):
@@ -54,9 +55,27 @@ def measureHoleInitial():
     #created as separate function to not mix class functions between Hole and Dog. 
 
 
+dog_ascii_1 = """
+           __
+      (___()'`;
+      /,    /`
+      \\"--\\
+"""
+# print(dog_ascii_1)
+
+dog_ascii_2= """
+   / \__
+  (    @\___
+  /         O
+ /   (_____/
+/_____/   U
+"""
+# print(dog_ascii_2)
+
 ## game play begins
 
 def mainMenu ():
+    print(dog_ascii_2)    
     playgame = input( 
         "\n"
         "Let's play Untitled Dog Game!""\n"
@@ -70,6 +89,22 @@ def mainMenu ():
 
 playgame = mainMenu()
 
+if playgame == "1": 
+    print(
+        "Welcome!" "\n"
+        "You'll be playing as Winnie today.""\n"
+        )
+if playgame == "2": 
+    print(
+        "Bummer!" "\n"
+        "Buddee is taking a nap right now and can't play.""\n"
+        )
+if playgame == "3": 
+        "Bummer!" "\n"
+        "Rusty is taking a nap right now and can't play.""\n"
+if playgame == "4": 
+    os._exit(0)
+
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n"
 "\n"
@@ -78,11 +113,6 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n"
 "\n")
 
-if playgame == "1": 
-    print(
-        "Welcome!" "\n"
-        "You'll be playing as Winnie today.""\n"
-        )
 
 ############## MOVE 1 ###################
 
@@ -105,15 +135,17 @@ def startGame():
 move1 = startGame()
 while move1 != "5":
     if move1 == "1":
-        print("Winnie Stats:" "\n")
-        Dog.listEnergy(Winnie)
+        Dog.listProfile(Winnie)
         sleep(2)
     if move1 == "2": 
         Dog.listAttentionSpan(Winnie)
+        sleep(2)
     if move1 == "3": 
         Dog.listEnergy(Winnie)
+        sleep(2)
     if move1 == "4":
         objective()
+        sleep(2)
     # list1 = ["1" "2", "3", "4", "5"]
     # for number in list1: 
     #     if move1 != number:
@@ -145,13 +177,7 @@ while move1 != "5":
 
 ############# MOVE 2 ##################
 
-# print 
-# (
-# __      _
-# o'')}____//
-#  `_/      )
-#  (_(_/-(_/"
-#  )
+
 
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n"
@@ -192,7 +218,7 @@ def backyard ():
     move3 = input ("Your human let you out back for your morning play session. You see Moose in his backyard through the fence but can't play with him." "\n"
     "What would you like to do?" "\n"
     "1 Use your paws to measure how deep of a hole you need to dig." "\n"
-    "2 Start digging your hole without measuring.""\n"
+    "2 Start digging your hole.""\n"
     "3 Bark at Moose through the fence. You miss your friend!""\n"
     "4 Hunt for treats in the backyard.""\n"
     "5 Leave the backyard for my nap.""\n"
@@ -204,7 +230,7 @@ while move3 != "5":
 #while less than 6 inputs and when they click 5 break the loop 
     if move3 == "1": measureHoleInitial()
     if move3 == "2": 
-          Hole.dig(Hole1, 2)
+          Hole.dig(Hole1, 3)
           Hole.measureHole(Hole1)
           Dog.updateEnergy(Winnie, -3)
     if move3 == "3":
@@ -257,7 +283,7 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 move5 = ""
 def backyard2 (): 
-    move5 = input ("Your human lets you back outside for your afternoon play session. It starts raining which softens the dirt near the fence - great conditions to complete your hole!" "\n"
+    move5 = input ("Your human lets you back outside for your afternoon play session." "\n"
     "What would you like to do?" "\n"
     "1 Dig as much as you can." "\n"
     "2 Hunt for treats in the backyard.""\n"
@@ -265,28 +291,33 @@ def backyard2 ():
     )
     return move5
 
-move5 = backyard2()
-
 move5treats = ["1 - grass" , "2 - a stick", "3 - a treat"]
-if move5 == "1": 
-    Hole.dig(Hole1, 2)
-    Hole.measureHole(Hole1)
-    Dog.updateEnergy(Winnie, -3)
-if move5 == "2": 
-    print ("hunt for treats")
-    for treat in move5treats:
-        print(treat)
-    treat1 = input("Which would you like to eat?")
-    if treat1 == "1": 
-        print("Bummer, that didn't give you any energy!")
-    if treat1 == "2": 
-        print("Bummer, that didn't give you any energy!")
-    if treat1 == "3":
-        print("Success! That treat gave you more energy.")
-        Dog.updateEnergy(Winnie, 3)
-if move5 == "3":
-    print ("Nap ")
-    Dog.updateEnergy(Winnie, -1)
+
+numberOfTurns = 0
+while numberOfTurns < 5: 
+
+    move5 = backyard2()
+
+    if move5 == "1": 
+        Hole.dig(Hole1, 3)
+        Hole.measureHole(Hole1)
+        Dog.updateEnergy(Winnie, -3)
+    if move5 == "2": 
+        print ("hunt for treats")
+        for treat in move5treats:
+            print(treat)
+        treat1 = input("Which would you like to eat?")
+        if treat1 == "1": 
+            print("Bummer, that didn't give you any energy!")
+        if treat1 == "2": 
+            print("Bummer, that didn't give you any energy!")
+        if treat1 == "3":
+            print("Success! That treat gave you more energy.")
+            Dog.updateEnergy(Winnie, 3)
+    if move5 == "3":
+        print ("Nap ")
+        Dog.updateEnergy(Winnie, -1)
+    numberOfTurns = numberOfTurns + 1
 
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n"
@@ -309,3 +340,4 @@ if Hole1.depth < 12:
     "Your day is over and you're out of time to dig your hole. Your human quickly notices the hole and grabs a wheelbarrow full of dirt to fill in your progress." 
     "While you failed today, there's always tomorrow to try again!")
 
+playgame = mainMenu()
