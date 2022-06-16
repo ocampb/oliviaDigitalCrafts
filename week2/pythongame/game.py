@@ -8,9 +8,10 @@ class Dog:
     def updateEnergy(self, updateAmount):
         self.energy = self.energy + updateAmount
         print("Energy is now:" + str(self.energy))
-    def listStats(self):
-        print("Energy = " + str(self.energy)) 
+    def listAttentionSpan(self):
         print ("Attention Span = " + str(self.attention))
+    def listEnergy(self):
+        print("Energy = " + str(self.energy))
 
 Winnie = Dog("Winnie", 10, 3)
 Buddee = Dog("Buddee", 5, 7)
@@ -49,7 +50,7 @@ def measureHoleInitial():
     print("Using your paw, you estimate that the hole will need to be 12 paws deep in order for you to fit through and enter Moose's backyard."
     "Measuring that hole took a lot of mental energy, you lose 1 energy point.")
     Dog.updateEnergy(Winnie, -1)
-    Dog.listStats(Winnie)
+    Dog.listEnergy(Winnie)
 
 
 ## game play begins
@@ -74,30 +75,53 @@ if playgame == "1":
         "You'll be playing as Winnie today.""\n"
         )
 
+############## MOVE 1 ###################
+
 move1 = ""
 def startGame():
+    print ("\n"
+    "To get started, let's learn about Winnie's Stats.'""\n""\n"
+     "\n")
     move1 = input( 
-    "\n"
-    "To get started, let's learn about Winnie and the objective:""\n"
-     "\n"
-     "1 View Winnie's Stats""\n"
-     "2 View Winnie's Goal for Today"
-      "\n")
+    "1 View Winnie's Character Profile""\n"
+    "2 View Winnie's Attention Span""\n"
+    "3 View Winnie's Energy Stats""\n"
+    "4 View Winnie's Objective for Today""\n"
+    )
     return move1
-
 move1 = startGame()
-if move1 == "1":
-    print("Winnie Stats:" "\n")
-    Dog.listStats(Winnie)
-if move1 == "2":
-    objective()
+while move1 != "4":
+    if move1 == "1":
+        print("Winnie Stats:" "\n")
+        Dog.listEnergy(Winnie)
+    if move1 == "2": 
+        Dog.listAttentionSpan(Winnie)
+    if move1 == "3": 
+        Dog.listEnergy(Winnie)
+    move1 = startGame()
 
-move1 = startGame()
-if move1 == "1":
-    print("Winnie Stats:" "\n")
-    Dog.listStats(Winnie)
-if move1 == "2":
-    objective()
+objective()
+
+# move100 = ""
+# def startGame():
+#     move100 = input( 
+#     "\n"
+#     "To get started, let's learn about Winnie's Stats.'""\n""\n"
+#      "\n"
+#      "1 View Winnie's Stats""\n""\n"
+#      "2 View Winnie's Goal for Today"
+#       "\n")
+#     return move100
+
+
+# move1 = startGame()
+# if move1 == "1":
+#     print("Winnie Stats:" "\n")
+#     Dog.listStats(Winnie)
+# if move1 == "2":
+#     objective()
+
+############# MOVE 2 ##################
 
 move2 = ""
 def breakfast (): 
@@ -113,7 +137,7 @@ move2 = breakfast()
 if move2 == "1":
     Dog.updateEnergy(Winnie, 2)
     print("Yummy breakfast, your energy increased by 3 points!")
-    Dog.listStats(Winnie)
+    Dog.listEnergy(Winnie)
 if move2 == "2":
     print("Uh oh. Your human reacted to your stubbornness by rolling their eyes and putting your bowl on the kitchen table.")
 
@@ -129,24 +153,26 @@ def backyard ():
     )
     return move3
 
-move3 = backyard()
-# while move3 != "5":
-#while less than 6 inputs and when they click 5 break the loop 
-if move3 == "1": measureHoleInitial()
-if move3 == "2": 
-    Hole.dig(Hole1, 2)
-    Hole.measureHole(Hole1)
-    Dog.updateEnergy(Winnie, -3)
-if move3 == "3":
-    print ("You and Moose start barking at each other through the fence and it's SO FUN you get the zoomies. Lose 1 energy. ")
-    Dog.updateEnergy(Winnie, -1)
-if move3 == "4": 
-    print ("You begin your hunt near the hammock and immediately find something! You gobble it down quickly, but you suddenly feel sick which costs you energy.")
-    Dog.updateEnergy(Winnie, -3)
 
+while move3 != "5":
+#while less than 6 inputs and when they click 5 break the loop 
+    if move3 == "1": measureHoleInitial()
+    if move3 == "2": 
+          Hole.dig(Hole1, 2)
+          Hole.measureHole(Hole1)
+          Dog.updateEnergy(Winnie, -3)
+    if move3 == "3":
+        print ("You and Moose start barking at each other through the fence and it's SO FUN you get the zoomies. Lose 1 energy. ")
+        Dog.updateEnergy(Winnie, -1)
+    if move3 == "4":    
+        print ("You begin your hunt near the hammock and immediately find something! You gobble it down quickly, but you suddenly feel sick which costs you energy.")
+        Dog.updateEnergy(Winnie, -3)
+    move3 = backyard()
 move4 = ""
 def lunch ():
-    print("It's time for lunch and you sure are hungry! You immediately eat all of the food in your food bowl.")
+    Dog.updateEnergy(Winnie, 3)
+    print("\n""It's time for lunch and you sure are hungry! You immediately eat all of the food in your food bowl.""\n")
+    Dog.listEnergy(Winnie)
     move4 = input( 
     "\n"
     "What are you going to do now?"
