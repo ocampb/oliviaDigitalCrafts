@@ -215,15 +215,9 @@ def runGame():
             os.system("clear")
             objective()
             sleep(4)
-        # list1 = ["1" "2", "3", "4", "5"]
-        # for number in list1: 
-        #     if move1 != number:
-        #         print ("Please enter your answer as a numeric value, either 1, 2, 3, 4 or 5")
         
         move1 = startGame()
         os.system("clear")
-
-        # fix this ^ by using an array with answers and using index to indicate answer
 
 
     ############# MOVE 2 ##################
@@ -385,7 +379,7 @@ def runGame():
     "\n"
     "\n")
 
-    ####### 
+    ####### WIN OR LOSE ######
 
     if Hole1.depth > 12: 
         print ("You win! Moose and Winnie are able to play together all the time now!")
