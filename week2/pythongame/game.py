@@ -237,7 +237,7 @@ if move2 == "1":
        "\n""\n""Yummy breakfast, your energy increased by 3 points!")
     Dog.listEnergy(Winnie)
 if move2 == "2":
-    print("Uh oh. Your human reacted to your stubbornness by rolling their eyes and putting your bowl on the kitchen table.")
+    print("\n""\n""Uh oh. Your human reacted to your stubbornness by rolling their eyes and putting your bowl on the kitchen table.")
 
 print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n"
@@ -314,11 +314,11 @@ print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 "\n")
 
 ####### MOVE 5 #########
-
+print("Your human lets you back outside for your afternoon play session." "\n")
+    
 move5 = ""
 def backyard2 (): 
-    move5 = input ("Your human lets you back outside for your afternoon play session." "\n"
-    "What would you like to do?" "\n"
+    move5 = input ("What would you like to do?" "\n"
     "1 Dig as much as you can." "\n"
     "2 Hunt for treats in the backyard.""\n"
     "3 Take a nap under the hammock.""\n"
