@@ -1,0 +1,45 @@
+.button {
+    color:blue;
+    justify-content: center; 
+    display: flex;
+    align-items: center
+}
+
+.container {
+    height: 500px;
+    width: 500px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.threeColors {
+    height: 500px;
+    width: 1000px;
+    background-color: blue;
+    display: flex
+}
+
+.color1 {
+    width: 33.3%;
+    background-color: red;
+    display: flex;
+    align-items:center;
+    justify-content:center
+}
+
+.color2 {
+    width: 33.3%;
+    background-color: blue;
+    display: flex;
+    align-items:center;
+    justify-content:center
+}
+
+.color3 {
+    width: 33.3%;
+    background-color: yellow;
+    display: flex;
+    align-items:center;
+    justify-content:center
+}
