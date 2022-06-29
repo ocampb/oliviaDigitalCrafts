@@ -1,0 +1,86 @@
+.gridcontainer {
+    display: grid;
+    place-items: center;
+    height: 1000px;
+    width: 1000px;
+    grid-template-areas:
+      "grid1 grid1 grid1 grid1"
+      "grid1 grid1 grid1 grid1"
+      "grid1 grid1 grid1 grid1"
+      "grid2 grid3 grid4 grid4"
+      "grid2 grid5 grid5 grid6"
+      "grid2 grid7 grid8 grid9"
+      "grid2 grid10 grid10 grid10";
+    gap: 10px; 
+  }
+
+.grid-1 {
+    width: 100%;
+    height: 100%; 
+    /* padding: 10px; */
+    background-color: orange;
+    grid-area: grid1;
+  }
+
+.grid-2 {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    grid-area: grid2;
+  }
+
+.grid-3 {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    grid-area: grid3;
+  }
+
+.grid-4 {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    grid-area: grid4;
+  }
+
+.grid-5 {
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    grid-area: grid5;
+  }
+
+.grid-6 {
+    width: 100%;
+    height: 100%;
+    background-color:purple  ;
+    grid-area: grid6;
+  }
+
+.grid-7 {
+    width: 100%;
+    height: 100%;
+    background-color:pink ;
+    grid-area: grid7;
+  }
+
+.grid-8 {
+    width: 100%;
+    height: 100%;
+    background-color: grey ;
+    grid-area: grid8;
+  }
+
+.grid-9 {
+    width: 100%;
+    height: 100%;
+    background-color:aqua ;
+    grid-area: grid9;
+  }
+
+.grid-10 {
+    width: 100%;
+    height: 100%;
+    background-color:olive ;
+    grid-area: grid10;
+  }

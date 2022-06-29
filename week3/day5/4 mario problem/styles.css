@@ -1,0 +1,63 @@
+
+.mariocontainer {
+    display: grid;
+    place-items: center;
+    gap: 20px 10px;
+    border-color: blue;
+    border: 10px;
+    grid-template-areas:
+      "grid1 grid1 grid1 grid3 grid3 grid3 grid3 grid3 grid3 grid1 grid1 grid1"
+      "grid2 grid3 grid4 grid3 grid3 grid3 grid3 grid3 grid3 grid1 grid1 grid1"
+      "grid2 grid5 grid6 grid3 grid3 grid3 grid3 grid3 grid3 grid1 grid1 grid1";
+  }
+
+.grid-1 {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-color: black;
+    border-radius: 5px;
+    grid-area: grid1;
+  }
+
+.grid-2 {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    grid-area: grid2;
+  }
+
+.grid-3 {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    grid-area: grid3;
+  }
+
+.grid-4 {
+    width: 100%;
+    height: auto;
+    background-color: blue;
+    grid-area: grid4;
+  }
+
+.grid-5 {
+    width: 100%;
+    height: auto;
+    background-color: yellow;
+    grid-area: grid5;
+  }
+
+.grid-6 {
+    width: 100%;
+    height: auto;
+    background-color:moccasin  ;
+    grid-area: grid6;
+  }
+
+.grid-7 {
+    width: 100%;
+    height: auto;
+    background-color:brown ;
+    grid-area: grid7;
+  }

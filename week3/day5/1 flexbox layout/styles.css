@@ -1,0 +1,46 @@
+.flexcontainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 900px;
+    background-color: pink;
+    justify-content: space-between;
+}
+
+.secondcontainer {
+    display: flex
+}
+
+.header {
+    display: flex;
+    background-color: grey;
+    width: 1000px;
+    height: 100px;
+    justify-content: center
+}
+
+.sidebar {
+    display: flex;
+    width: 250px;
+    height: 600px;
+    background-color:aqua;
+    margin: 20px;
+}
+
+.content {
+    display: flex;
+    width: 600px ;
+    height: 300px;
+    background-color:blue; 
+    color:aqua;
+    margin: 20px;
+
+}
+
+.footer {
+    display: flex;
+    width: 1000px;
+    height: 100px;
+    background-color: grey;
+}
