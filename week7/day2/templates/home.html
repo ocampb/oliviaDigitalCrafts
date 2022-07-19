@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Howdy</h1>
+      ${user.name}
+      <p>Our teachers name is ${teacher}</p>
+      <p>We have 2 students in our class and their names are:</p>
+      ${students.map(student => `
+      <h2>${student}</h2>
+      `).join('')}
+    </div>
+  </body>
+</html>
