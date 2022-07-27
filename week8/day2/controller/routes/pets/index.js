@@ -11,7 +11,8 @@ router.post("/create_pets", async (req, res) => {
 
 //read
 router.get("/get_pets", async (req, res) => {
-  res.render("index.html", { locals: { title: "test" } });
+  const pets = await Pets.findAll({ raw: true });
+  res.render("index.html", { locals: { pets: pets } });
 });
 
 // update
